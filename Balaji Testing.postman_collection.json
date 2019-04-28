@@ -1,0 +1,1359 @@
+{
+	"info": {
+		"_postman_id": "0612fd35-b9ef-985d-75ae-1c3d026fc96e",
+		"name": "Balaji Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Yo Store",
+			"item": [
+				{
+					"name": "Get Store Items",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/yo_get_store_items",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_get_store_items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Initiate Purchase",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"artifact_id\": \"5ab6604f6374224144acd2a5\",\n  \"purchase_platform\": \"android\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_buy_artifact",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_buy_artifact"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Purchase using points",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"transaction_id\":\"lwtnx-2pj3inxsjhhtjufv\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_purchase_with_points",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_purchase_with_points"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Android Payment Status",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"success\": true,\n\t\"transaction_id\":\"lwtnx-1431pkh6yvjhvygmy5\",\n\t\"transaction_details\":{\n\t\t\"hhh\":3278,\n\t\t\"dhsa\":\"dhsadbaskj\",\n\t\t\"fdsfdsfds\":\"fdsfdsfdsf\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_payment_success_android",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_payment_success_android"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "My Purchases",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/yo_get_my_purchases",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_get_my_purchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get My Boosts",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/yo_get_my_boosts",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_get_my_boosts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Relieved From Detention",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"artifact_id\":\"5ab6604f6374224144acd2a5\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_get_relieved_from_detention",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_get_relieved_from_detention"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Transactions History",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/yo_get_transactions_history",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_get_transactions_history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Redeem Points",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "xxxhdpi"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"paypal_id\":\"irakeshpatil\",\n\t\"transfer_points\":\"10000\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_points_to_paypal",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_points_to_paypal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Usser Paypal Id",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{user_jwt}}"
+							},
+							{
+								"key": "size",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"paypal_id\":\"irakeshpatil\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/yo_save_paypalId",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"yo_save_paypalId"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Social Sign Up",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"irakeshpatil843832@gmail.com\",\n\t\"username\": \"_irakeshpatil843283\",\n\t\"registered_from\": \"google\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_auth_social",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_auth_social"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"ira.kesh.p.a.til@gmail.com\",\n  \"username\": \"irakeshpatil\",\n  \"password\": \"!Abc12345\",\n  \"mobile\": \"8834346459\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_sign_up",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_sign_up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Avatars",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_avatars",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_avatars"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Preferences",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"gender\": \"female\",\n  \"age\": 23,\n  \"interested_in\": \"both\",\n  \"avatar_url\": \"5ab6531f63742215f0d66cbf\",\n  \"wallpaper_url\": \"5ab6587c63742215f0d66d45\",\n  \"current_location\": {}\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_save_preferences",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_save_preferences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify Mobile OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mobile\": \"9739984398\",\n  \"mobile_otp\": \"100675\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_verify_mobile_otp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_verify_mobile_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend Mobile OTP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mobile\": \"9739984398\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_resend_mobile_otp",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_resend_mobile_otp"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"password\":\"!Abc123458\",\n  \"confirm_password\":\"!Abc123458\",\n  \"otp\":\"10005477\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_reset_password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_reset_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email_mobile\": \"irakeshpatil@gmail.com\",\n  \"password\": \"!Abc12345\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_sign_in",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_sign_in"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Profile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"user_id\":\"5aff17849741582aa129206b\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_user_profile",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_user_profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Random Chat",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_start_random_chat",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_start_random_chat"
+					]
+				},
+				"description": "Show a gif while we connect to random people\nhaven't sent the name ********"
+			},
+			"response": []
+		},
+		{
+			"name": "Accept/Delete - YoMate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt_2}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"chat_id\": \"5aa515a1fbb80d0278bebca2\",\n  \"accept\": false\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_accept_chat",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_accept_chat"
+					]
+				},
+				"description": "Put a pop up of \"Are you sure?\" in case of accept:false in input parameters"
+			},
+			"response": []
+		},
+		{
+			"name": "Mark Chat Favourite",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"chat_id\": false,\n  \"group_chat_id\": \"5aa6dc3a1759941c13bff5b7\",\n  \"favourite\": true\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_mark_favourite",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_mark_favourite"
+					]
+				},
+				"description": "mark chat or group chat as favourite, just set chat_id or group_chat_id to false based on what you don't want to mark favourite"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Group Chat",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"group_name\": \"Rising Pune Supergiant 00000000\",\n  \"group_avatar\": \"5ac0c18422d78d124cb95e20\",\n  \"is_private\": false\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_create_group_chat",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_create_group_chat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Members To Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"group_chat_id\": \"5c6feb5b4c263f1ba81f3c29\",\n  \"group_members\": [\"59de3e070c0c9c22327ba11h\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_add_members_to_group",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_add_members_to_group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Members From Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"group_chat_id\": \"5aafd85dee6041e85cd4d4f8\",\n  \"group_members\": [\"5a99bd904f6fe40c0abd9c5c\",\"59d3cb5e4c805cb008e874dd\", \"59efa4fdf8aac2c17a1cdd36\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_remove_members_to_group",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_remove_members_to_group"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Make Admin Of Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"group_chat_id\": \"5aa8472f01fd20533f9ba573\",\n\t\"group_admins\": [\"59d8c422c97a7f200c648e1f\",\"59d8c40ec97a7f200c648e1c\"]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_make_user_group_admin",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_make_user_group_admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Group",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"group_chat_id\": \"5aa8472f01fd20533f9ba573\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_delete_group",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_delete_group"
+					]
+				},
+				"description": "Only Admin can delete group"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Chat List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_chat_list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_chat_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Featured Rooms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_featured_rooms",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_featured_rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Rooms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_search?searchFor=royal",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_search"
+					],
+					"query": [
+						{
+							"key": "searchFor",
+							"value": "royal"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Connect Socket",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_connect?id={{user_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_connect"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "{{user_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Auth Social",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"abbab@hdsbk.com\",\n\t\"username\":\"fjkdshgf\",\n\t\"social_type\":\"facebook\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_auth_social",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_auth_social"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open Private Chat",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_open_private_chat?oppo_user_id=5aa8127635a240710f6dc728",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_open_private_chat"
+					],
+					"query": [
+						{
+							"key": "oppo_user_id",
+							"value": "5aa8127635a240710f6dc728"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Report List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_report_list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_report_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Report User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"oppo_user_id\": \"5aff17a09741582aa129206c\",\n  \"report_id\": \"5a6465a33cc30936487af124\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_report_user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_report_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Chat Messages ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"chat_id\":\"5aafd844ee6041e85cd4d4f7\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/message/retrieve",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sendNotification",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/testthisapi",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"testthisapi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Messages",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"chat_id\": \"5aafd844ee6041e85cd4d4f7\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/message/retrieve",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"retrieve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leader Board",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_leaderboard?type=all",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_leaderboard"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Group Info",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_group_profile?group_id=5abed8dd87522367a84690f4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_group_profile"
+					],
+					"query": [
+						{
+							"key": "group_id",
+							"value": "5abed8dd87522367a84690f4"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Members to Add",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					},
+					{
+						"key": "size",
+						"value": "xxxhdpi"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/yo_get_members_to_add?group_id=5aafd844ee6041e85cd4d4f7",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_get_members_to_add"
+					],
+					"query": [
+						{
+							"key": "group_id",
+							"value": "5aafd844ee6041e85cd4d4f7"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email_mobile\":\"irakeshpatil@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/yo_forgot_password",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"yo_forgot_password"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{url}}/testing_link",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{user_jwt}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/testing_link",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"testing_link"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
