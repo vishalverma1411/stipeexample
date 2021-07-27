@@ -1,0 +1,37 @@
+<div fxShow="{{sMenu}}">
+  <mat-toolbar color="primary" fxLayoutAlign="space-between end" style="height: 5vh;">
+   
+    <button mat-icon-button (click)="showLogout = !showLogout">			  
+     <mat-icon style="-webkit-text-fill-color: white;"> account_circle </mat-icon> <strong>Welcome!!</strong>
+   
+    </button>
+    <button mat-button class="m" (click)="logout()" ><span class="m1">Log Out</span></button>
+    <!-- <span *ngIf="showLogout">      		
+      <button mat-menu-item class="m" (click)="logout()" ><span class="m1">Log Out</span></button>
+     </span>  -->
+   
+      
+  </mat-toolbar>
+  
+  </div> 
+  
+  
+  <!-- <div> 
+      <div fxShow="{{!showmenu.visible1}}" >
+    
+    <button mat-raised-button  routerLink='/application/home' routerLinkActive="active" >
+      <mat-icon >home</mat-icon>Home </button>
+      
+      <button *ngIf="userType === 'admin'" mat-raised-button routerLink='application/AdminAccess/admin-activity' 
+      routerLinkActive="active">Admin Activity </button>
+  
+    <button *ngIf="userType === 'manager'" mat-raised-button routerLink='application/UserManagement/add-users' 
+    routerLinkActive="active">Register User</button>
+          
+    </mat-nav-list>
+      </mat-toolbar>
+      </div>  
+      </div> -->
+    
+    <router-outlet></router-outlet>
+  

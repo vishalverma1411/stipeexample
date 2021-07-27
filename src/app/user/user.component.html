@@ -1,0 +1,12 @@
+<h3 style="text-align:center;">
+	--------------Welcome {{currentUser}}----------------
+</h3>
+
+<p  style="text-align:center;" *ngIf="bookData?.length == 0">No Books are currently available!</p>
+<h2>Books Available</h2>
+<table>
+    <tr *ngFor="let field of bookData; let i = index">
+      <td  *ngIf="field?.name">{{field.name}}</td>
+
+    </tr>
+</table>

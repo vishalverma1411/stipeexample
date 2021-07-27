@@ -1,0 +1,91 @@
+<h3 style="text-align:center;">
+	--------------Welcome {{currentUser}}----------------
+</h3>
+
+
+<div>
+	<div>
+		<div class="container">
+			<br>
+			<div class="row">
+				<div style="margin-bottom: 15px;">
+					<a (click)="onEditCloseItems()" class="text-info float-right">
+					<button mat-button color="primary"><mat-icon>edit</mat-icon>Edit/Add Books</button>
+				</a>
+			</div>
+			<h2>Books Available</h2>
+			<div *ngIf="!isEditItems">
+				<table>
+					<tr *ngFor="let field of fieldArray; let i = index">
+					  <td  *ngIf="field?.name">{{field.name}}</td>
+
+					</tr>
+				</table>
+				<!-- <div *ngFor="let field of fieldArray; let i = index">
+					<span>
+						 {{field.name}}
+					</span>
+				</div> -->
+			</div>
+
+			<div *ngIf="isEditItems">
+				<!-- <div>
+					<span *ngIf="firstField">
+								<mat-form-field  appearance="standard">
+								<input matInput [(ngModel)]="firstFieldName" class="form-control" type="text" name="firstFieldName">
+								<mat-icon matSuffix (click)="firstField = false">delete</mat-icon>
+							</mat-form-field>
+							
+					</span>
+				</div> -->
+
+				<div *ngFor="let field of fieldArray; let i = index" >
+					<span>
+	
+							<mat-form-field  appearance="standard">
+								<input matInput [(ngModel)]="field.name" class="form-control" type="text" name="{{field.name}}" placeholder="Item Name">
+								<mat-icon matSuffix (click)="deleteFieldValue(i)">delete</mat-icon>
+							</mat-form-field>
+
+					</span>
+				</div>
+				<div style="margin-top: 50px;">
+					<span align="right">
+						<button  mat-button color="primary" *ngIf="fieldArray.length <= 100" class="btn btn-success btn-sm" type="button" (click)="addFieldValue()" style="margin-right:10px">Add More Item</button>
+						<button  mat-button color="primary" (click)="onEditCloseItems()" class="btn btn-primary btn-sm" type="button">Save Items</button>
+					</span>
+				</div>
+			</div>
+
+			</div>
+		</div>
+	</div>
+	
+	<div class="registerU">
+		<hr>
+		<button mat-button color="primary" (click)="openRegistration()">Click to Register New User</button>
+		<form  (ngSubmit)="onSubmit(user.username,user.password)" #myForm="ngForm" class="form" *ngIf="reg">
+			<br/>
+		
+				<div class="form-field">
+				  <!-- <label class="user" for="login-username"><span class="hidden">Username</span></label> -->
+				  <input id="login-username" type="text" class="form-input" placeholder="Username"  [(ngModel)]="user.username" name="username">
+				</div>
+		
+				<div class="form-field">
+				  <!-- <label class="lock" for="login-password"><span class="hidden">Password</span></label> -->
+				  <input id="login-password" type="password" class="form-input" placeholder="Password"  [(ngModel)]="user.password" name="gpassword">
+				</div>
+				
+		
+				<div class="form-field" style=" flex-direction:column;">
+			  <button type="submit" mat-button color="primary">Add User</button>
+			  <!-- <mat-progress-bar mode="indeterminate" *ngIf="showprogressbar"></mat-progress-bar>     -->
+				</div>
+			
+			  </form>
+			  <p *ngIf="uAdded">{{user.username}} Successfully Added!</p>
+	</div>
+	
+
+</div>
